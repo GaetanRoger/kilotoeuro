@@ -1,5 +1,12 @@
 sudo: required
 dist: trusty
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 language: node_js
 node_js:
   - node
@@ -22,11 +29,12 @@ cache:
 
 before_script:
 - npm install -g @angular/cli
-- npm install -g karma
-- npm install
 - npm run build
 
-script: karma start src/karma.conf.js --single-run
+script:
+- npm run lint
+- npm run test
+- npm run e2e
 
 deploy:
   on:
