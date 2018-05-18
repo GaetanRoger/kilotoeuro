@@ -25,7 +25,10 @@ before_script:
 - npm install
 - npm run build
 
-script: npm run test
+script:
+- npm run lint
+- npm run test
+- npm run e2e
 
 deploy:
   on:
