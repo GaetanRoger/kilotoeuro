@@ -6,7 +6,7 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
-      
+
 language: node_js
 node_js:
   - node
@@ -29,7 +29,6 @@ cache:
 
 before_script:
 - npm install -g @angular/cli
-- npm install
 - npm run build
 
 script:
